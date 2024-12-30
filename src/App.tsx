@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./views/Home";
 import Write from "./views/Write";
+import Read from "./views/Read";
 
 const router = createBrowserRouter([
   {
@@ -12,8 +13,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "Write",
+        path: "write",
         element: <Write />,
+      },
+      {
+        path: "read",
+        element: <Read />,
       },
       // {
       //   path: "test",

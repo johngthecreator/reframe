@@ -11,7 +11,7 @@ export default function Write() {
     const id = params.get('id') || null;
     const rf = params.get('rf') || false;
 
-    const worker = useRef(null);
+    const worker = useRef<Worker | null>(null);
     const [title, setTitle] = useState<string | null>(null);
     const [entry, setEntry] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
@@ -59,7 +59,7 @@ export default function Write() {
             getEntry(Number(id));
         }
 
-        if (!worker.current) {
+        if (worker && !worker.current) {
             worker.current = new Worker(new URL('../worker.js', import.meta.url), {
                 type: 'module'
             });
@@ -79,8 +79,8 @@ export default function Write() {
             console.log(e.data)
         }
 
-        worker.current.addEventListener('message', onMessageReceived);
-        return () => worker.current.removeEventListener('message', onMessageReceived);
+        worker.current?.addEventListener('message', onMessageReceived);
+        return () => worker.current?.removeEventListener('message', onMessageReceived);
     }, [])
 
 

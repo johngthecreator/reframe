@@ -40,7 +40,7 @@ export default function Read() {
                         <>
                             <h2 className="italic text-gray-400">reframed</h2>
                             <div className="bg-white h-full p-3 text-ellipsis overflow-hidden rounded-xl">
-                                <p className="line-clamp-5">
+                                <p>
                                     {updatedText}
                                 </p>
                             </div>
@@ -52,7 +52,7 @@ export default function Read() {
                     }
                     <h2 className="italic text-gray-400">original</h2>
                     <div className="bg-white h-full p-3 text-ellipsis overflow-hidden rounded-xl">
-                        <p className="line-clamp-5">
+                        <p>
                             {text}
                         </p>
                     </div>

@@ -1,7 +1,8 @@
-import { BadgeCheck } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { db } from "@/lib/db";
+import { EntryOptions } from "@/components/EntryOptions";
 
 export default function Read() {
     const [searchParams] = useSearchParams();
@@ -31,19 +32,17 @@ export default function Read() {
         <div className="w-full h-dvh md:p-5 flex justify-center">
             <div className="flex flex-col gap-3 w-full h-full md:w-[390px] md:h-full md:max-h-[844px] md:rounded-xl bg-offwhite overflow-hidden p-3">
                 <div className="flex flex-row gap-3 justify-between items-center">
-                    <h2 className="text-2xl font-semibold font-serif">Sappho.</h2>
-                    <Link to={"/"} viewTransition className="px-5 py-1.5 font-semibold bg-gray-300 text-white rounded-full"><BadgeCheck /></Link>
+                    <Link to={"/"} viewTransition className="text-black"><ArrowLeft /></Link>
+                    <EntryOptions id={Number(id)} />
                 </div>
-                <h2 className="text-2xl font-semibold">{title}</h2>
+                <h2 className="text-2xl font-semibold text-brightblue">{title}</h2>
                 <div className="flex flex-col gap-3">
                     {updatedText &&
                         <>
                             <h2 className="italic text-gray-400">reframed</h2>
-                            <div className="bg-white h-full p-3 text-ellipsis overflow-hidden rounded-xl">
-                                <p>
-                                    {updatedText}
-                                </p>
-                            </div>
+                            <p>
+                                {updatedText}
+                            </p>
                         </>
 
                     }
@@ -51,11 +50,9 @@ export default function Read() {
                         <hr className="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700" />
                     }
                     <h2 className="italic text-gray-400">original</h2>
-                    <div className="bg-white h-full p-3 text-ellipsis overflow-hidden rounded-xl">
-                        <p>
-                            {text}
-                        </p>
-                    </div>
+                    <p>
+                        {text}
+                    </p>
 
                 </div>
             </div>

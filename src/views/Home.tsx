@@ -1,4 +1,4 @@
-import { Pencil } from "lucide-react";
+import { Pencil, CircleUserRound } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import EntryCard from "../components/EntryCard.tsx";
@@ -11,8 +11,11 @@ export default function Home() {
         <div className="w-full h-dvh md:p-5 flex justify-center">
             <div className="relative w-full h-full md:w-[390px] md:h-full md:max-h-[844px] md:rounded-xl bg-offwhite overflow-hidden">
                 <div className="flex flex-row justify-between items-center p-3">
-                    <h2 className="text-2xl font-semibold font-serif">Sappho.</h2>
-                    <Backlog />
+                    <h2 className="text-2xl font-semibold text-brightblue">Sappho.</h2>
+                    <div className="space-x-3">
+                        <Backlog />
+                        <button className="px-5 py-1.5 bg-brightblue text-white rounded-full"><CircleUserRound /></button>
+                    </div>
                 </div>
                 <div className="h-full overflow-auto mx-3 mt-2 space-y-3 rounded-xl">
                     {entries && entries.map(entry => {
@@ -31,7 +34,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="z-10 absolute bottom-0 bg-transparent w-full p-3 flex justify-end">
-                    <Link to={"/write"} viewTransition className=" p-4 font-bold bg-mutedorange text-white rounded-full"><Pencil /></Link>
+                    <Link to={"/write"} viewTransition className=" p-4 font-bold bg-normblue text-white hover:brightness-95 duration-300 ease-in-out rounded-full"><Pencil /></Link>
                 </div>
             </div>
         </div>

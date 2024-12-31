@@ -35,8 +35,6 @@ export default function Write() {
             navigate("/");
         }
 
-        console.log("made it to effect");
-
         if (rf && id && (label == 0)) {
             updateEntry();
         } else {
@@ -108,9 +106,9 @@ export default function Write() {
         <div className="w-full h-dvh md:p-5 flex justify-center">
             <div className="flex flex-col gap-3 w-full h-full md:w-[390px] md:h-full md:max-h-[844px] md:rounded-xl bg-offwhite overflow-hidden p-3">
                 <div className="flex flex-row gap-3 justify-between items-center">
-                    <Link to={"/"} viewTransition className="p-1.5 rounded-xl bg-gray-300"><X className="text-white" /></Link>
-                    <p className="px-5 py-1.5 font-semibold text-gray-400 rounded-full">{(rf && id) ? "reframing..." : "writing..."}</p>
-                    <button onClick={() => classify(entry)} className="px-5 py-1.5 font-semibold bg-mutedorange text-white rounded-full">{loading ? <LoaderCircle className="animate-spin" /> : <Check />}</button>
+                    <Link to={"/"} viewTransition><X className="text-black" /></Link>
+                    <p className="px-5 py-1.5 font-semibold text-mutedgray rounded-full">{(rf && id) ? <span className="text-xl">reframing &#129782;</span> : <span className="text-xl">writing &#9999;</span>}</p>
+                    <button onClick={() => classify(entry)} className="text-brightblue">{loading ? <LoaderCircle className="animate-spin" /> : <Check />}</button>
                 </div>
                 <div className="h-full flex flex-col gap-2 p-3 rounded-xl bg-white">
                     <input onChange={(e) => setTitle(e.target.value)} value={title ? title : ""} type="text" placeholder="Title" className="text-2xl focus:outline-none" />

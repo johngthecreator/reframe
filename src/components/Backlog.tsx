@@ -15,7 +15,7 @@ export default function Backlog() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<button className="p-5 py-1.5 font-semibold bg-gray-300 text-xs text-white rounded-full">
+				<button className="p-1.5 font-semibold bg-white hover:brightness-95 duration-300 ease-in-out text-xs text-black rounded-full">
 					<Moon />
 				</button>
 			</DialogTrigger>

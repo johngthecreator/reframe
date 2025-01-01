@@ -27,7 +27,6 @@ export default function Read() {
         }
     }, [])
 
-
     return (
         <div className="w-full h-dvh md:p-5 flex justify-center">
             <div className="flex flex-col gap-3 w-full h-full md:w-[390px] md:h-full md:max-h-[844px] md:rounded-xl bg-offwhite overflow-hidden p-3">
@@ -36,7 +35,7 @@ export default function Read() {
                     <EntryOptions id={Number(id)} />
                 </div>
                 <h2 className="text-2xl font-semibold text-brightblue">{title}</h2>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 overflow-auto">
                     {updatedText &&
                         <>
                             <h2 className="italic text-gray-400">reframed</h2>
@@ -47,7 +46,7 @@ export default function Read() {
 
                     }
                     {updatedText &&
-                        <hr className="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700" />
+                        <hr className="h-px my-4 bg-gray-300 border-1 dark:bg-gray-700" />
                     }
                     <h2 className="italic text-gray-400">original</h2>
                     <p>

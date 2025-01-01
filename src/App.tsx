@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./views/Home";
 import Write from "./views/Write";
 import Read from "./views/Read";
+import Settings from "./views/Settings";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "read",
         element: <Read />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
       },
       // {
       //   path: "test",

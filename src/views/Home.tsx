@@ -1,4 +1,4 @@
-import { Pencil, CircleUserRound } from "lucide-react";
+import { Pencil, Cog } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import EntryCard from "../components/EntryCard.tsx";
@@ -12,9 +12,11 @@ export default function Home() {
             <div className="relative w-full h-full md:w-[390px] md:h-full md:max-h-[844px] md:rounded-xl bg-offwhite overflow-hidden">
                 <div className="flex flex-row justify-between items-center p-3">
                     <h2 className="text-2xl font-semibold text-brightblue">Sappho.</h2>
-                    <div className="space-x-3">
+                    <div className="flex flex-row gap-3">
                         <Backlog />
-                        <button className="px-5 py-1.5 bg-brightblue text-white rounded-full"><CircleUserRound /></button>
+                        <Link to={"/settings"} viewTransition className="shrink-0 p-1.5 font-semibold bg-white hover:brightness-95 duration-300 ease-in-out text-xs text-black rounded-full">
+                            <Cog />
+                        </Link>
                     </div>
                 </div>
                 <div className="h-full overflow-auto mx-3 mt-2 space-y-3 rounded-xl">

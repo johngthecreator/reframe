@@ -3,10 +3,12 @@ import Home from "./views/Home";
 import Write from "./views/Write";
 import Read from "./views/Read";
 import Settings from "./views/Settings";
+import LockWrapper from "./lib/LockWrapper";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <LockWrapper />,
     errorElement: <div> Something went wrong!</div>,
     children: [
       {
@@ -44,7 +46,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />
 }
 
 export default App;

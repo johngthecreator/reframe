@@ -66,7 +66,8 @@ export default function Write() {
         const onMessageReceived = async (e: ModelLoadStatus) => {
             if (e.data.status == 'complete') {
                 setLoading(false);
-                const currLabel = (e.data.output[0]['label'] == 'NEGATIVE') ? 1 : 0
+                console.log(e.data.output);
+                const currLabel = (e.data.output[0]['label'] == 'negative') ? 1 : 0
                 console.log(currLabel);
                 if (currLabel == 1) {
                     setLabel(currLabel);
